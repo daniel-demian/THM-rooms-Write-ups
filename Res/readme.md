@@ -1,8 +1,8 @@
 # Res Room (2025) — Write-up
 
 **Author:** Daniel Demian  
-**Room:** Res (TryHackMe)  
-**Difficulty:** Easy 🔰  
+**Room:** [Res (TryHackMe)](https://tryhackme.com/room/res)  
+**Difficulty:** Easy 🟢  
 **Time to complete:** ~30 minutes
 
 ---
