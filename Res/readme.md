@@ -64,7 +64,7 @@ MAC Address: 02:08:F1:6B:28:D1 (Unknown)
 
 Redis was exposed and allowed configuration writes. Using `redis-cli` we can write a PHP webshell into the webroot and trigger it via HTTP.
 
-**Tools used:** `redis-tools` (for `redis-cli`), a web browser, and `nc` for a listener.
+**Tools used:** `redis-tools` (for `redis-cli`), a web browser, and `nc` for a listener. [Resource](https://hackviser.com/tactics/pentesting/services/redis)
 
 **Commands executed:**
 
@@ -122,7 +122,7 @@ cat /home/vianka/user.txt
 
 ## Privilege Escalation — Reading /etc/shadow with `xxd`
 
-`/etc/shadow` was not directly readable by the current account. Using the SUID `xxd` binary we can dump the hex of `/etc/shadow` and reconstruct it as a readable file.
+`/etc/shadow` was not directly readable by the current account. Using the SUID `xxd` binary we can dump the hex of `/etc/shadow` and reconstruct it as a readable file. [Resource](https://gtfobins.github.io/gtfobins/xxd/#suid)
 
 **Pattern used (lab-only, defensive learning):**
 
