@@ -120,30 +120,6 @@ cat /home/vianka/user.txt
 
 ---
 
-## Post-Exploitation & Local Enumeration
-
-With an initial `www-data` shell we ran a standard enumeration checklist to find interesting files, SUID binaries, and configuration details.
-
-**Useful commands:**
-
-```bash
-id; uname -a; cat /etc/os-release
-find / -perm -4000 -type f 2>/dev/null   # SUID binaries
-ls -la /home; ls -la /home/vianka
-grep -R --line-number -i "password" /home /etc 2>/dev/null
-```
-
-**Notable SUID binaries discovered (truncated):**
-
-- `/usr/bin/xxd` (unexpected SUID)
-    
-- `/usr/bin/sudo`, `/usr/bin/passwd`, `/bin/su`, etc. (expected)
-    
-
-The presence of `xxd` with the SUID bit is suspicious — it is not commonly SUID and can be abused to read binary files when run with elevated privileges. GTFOBins documents useful patterns for such binaries.
-
----
-
 ## Privilege Escalation — Reading /etc/shadow with `xxd`
 
 `/etc/shadow` was not directly readable by the current account. Using the SUID `xxd` binary we can dump the hex of `/etc/shadow` and reconstruct it as a readable file.
